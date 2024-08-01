@@ -727,7 +727,7 @@ body
         top: 50%
         transform: translate(0,-50%)
         right: 1px
-        img
+
 //------------beauty-master----------
 .beauty-master_title
     margin-top: clamp(80px, calc(80px + (130 - 80) * ((100vw - 375px) / (1920 - 375))),130px)
@@ -902,45 +902,103 @@ body
         white-space: nowrap
 
 .english-loft_main
-    display: grid
-    // grid-template-columns: 1fr 1fr 1fr
-    // grid-template-rows: auto
-    // grid-template-rows: 200px 200px
-    grid-template-areas:"item1 item2 item3" "item4 item4 item5"
-    // grid-gap: 10px
+    display: flex
+    flex-direction: column
+    gap: 20px
+
 
 .english-loft_item
-    border:1px solid #000
+    // border:1px solid #000
     border-radius: 20px
+    background-color: $color-CFE5FF
+    overflow: hidden
+    padding: 0 30px
+    display: flex
+    align-items: center
+
+
+.english-loft_items
+    display: flex
+    gap: 20px
+    ._items-flex
+        display: flex
+        gap: 20px
 ._item_loft_one 
-    display: block
-    width: 573px
+    width: clamp(351px, calc(351px + (573 - 351) * ((100vw - 1280px) / (1920 - 1280))),573px)
+    // flex: 0 1 300px
     height: 305px
-    grid-area: item1
+    // grid-area: item1
+._loft_items
+    display: flex
+    flex-direction: column
+    gap: clamp(14px, calc(14px + (30 - 14) * ((100vw - 375px) / (1920 - 375))),30px)
 
 ._item_loft_two 
-    display: block
-    width: 425px
+    width: clamp(338px, calc(338px + (425 - 338) * ((100vw - 1280px) / (1920 - 1280))),425px)
+    // flex: 0 1 300px
     height: 305px
-    grid-area: item2
+    padding: 0 !important
+    // grid-area: item2
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    
 
 ._item_loft_three 
-    display: block
+    display: flex
+    align-items: center
     width: 721px
+    // flex: 0 1 400px
     height: 305px
-    grid-area: item3
+    ._loft_items
+        li
+            &:nth-child(3)
+                display: none
+            &:nth-child(4)
+                display: none
+                
 
-._item_loft_four 
-    display: block
+._item_loft_four
+    position: relative
+    display: flex
+    align-items: center
     width: 1167px
     height: 444px
-    grid-area: item4
+    ._loft_four_button_wrap
+        position: absolute
+        bottom: 30px
+        right: 30px
+        span
+            font-size: 44px
+            color: $color-FF8A00
+            font-family: 'Kyiv Type Serif'
+            font-weight: 600
+            margin-right: 22px
 
-._item_loft_five 
+._item_loft_five
+    position: relative
     display: block
-    width: 573px
+    width: clamp(274px, calc(274px + (573 - 274) * ((100vw - 1280px) / (1920 - 1280))),573px)
+    // flex: 0 1 300px
     height: 444px
-    grid-area: item5
+    // grid-area: item5
+    background-color: #C0C1BF
+    img
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: clamp(126px, calc(126px + (331 - 126) * ((100vw - 375px) / (1920 - 375))),331px)
+        height: clamp(165px, calc(165px + (434 - 165) * ((100vw - 375px) / (1920 - 375))),434px)
+._item_loft_six
+    width: 100%
+    display: none
+    align-items: center
+._loft_items
+    li
+        font-size: clamp(14px, calc(14px + (32 - 14) * ((100vw - 375px) / (1920 - 375))),32px)
+        font-weight: 600
 //---------------------------------------
         
 @import './_footer'

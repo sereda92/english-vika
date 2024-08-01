@@ -36,6 +36,20 @@
                 bottom: 10%
 
 @media screen and (max-width: 1280px)
+    ._item-one
+        flex-direction: column
+    ._item_loft_one 
+        width: 100%
+
+    ._item_loft_two
+        width: 100%
+    ._item_loft_three
+        width: 100%
+    // ._item_loft_five
+    //     width: 274px
+    ._item-two
+        flex-direction: row-reverse
+
 
 @media screen and (max-width: 1240px)
     .english-loft__title
@@ -117,6 +131,40 @@
         transform: rotate(-10deg) scale(1.2)
 
 @media screen and (max-width: 768px)
+    ._item_loft_four
+        ._loft_items
+            li
+                &:nth-child(1)
+                    display: none
+                &:nth-child(2)
+                    display: none
+        ._loft_four_button_wrap
+            bottom: 20px
+            right: 20px
+            span
+                font-size: 34px
+    ._item_loft_three
+        justify-content: center
+        ._loft_items
+            li
+                &:nth-child(3)
+                    display: block
+                &:nth-child(4)
+                    display: block
+    .english-loft_item
+        padding: 0 13px
+    ._item_loft_one
+        height: clamp(140px, calc(140px + (243 - 140) * ((100vw - 375px) / (768 - 375))),243px)
+    ._item_loft_two
+        height: clamp(140px, calc(140px + (243 - 140) * ((100vw - 375px) / (768 - 375))),243px)
+    ._item_loft_three
+        height: clamp(143px, calc(143px + (328 - 143) * ((100vw - 375px) / (768 - 375))),328px)
+    ._item_loft_four
+        height: clamp(149px, calc(149px + (297 - 149) * ((100vw - 375px) / (768 - 375))),297px)
+    ._item_loft_five
+        height: clamp(169px, calc(169px + (297 - 169) * ((100vw - 375px) / (768 - 375))),297px)
+    ._item_loft_six
+        height: clamp(169px, calc(169px + (297 - 169) * ((100vw - 375px) / (768 - 375))),297px)
     .english-loft__title
         h2
             white-space: pre-wrap
@@ -232,6 +280,15 @@
 
 
 @media screen and (max-width: 680px)
+    ._item-two
+        flex-direction: column-reverse
+    ._item_loft_five 
+        width: 50%
+    ._item_loft_six
+        width: 50%
+        display: flex
+    ._item_loft_four
+        width: 100%
     .nav-revers
         margin-top: 18px
     .inside_list 
@@ -340,6 +397,40 @@
         margin-top: 150px !important
 
 @media screen and (max-width: 540px)
+    .english-loft_item 
+        padding: 20px 13px
+        align-items: flex-start
+    ._item_loft_four
+        ._loft_items
+            li
+                &:nth-child(1)
+                    display: block
+                &:nth-child(2)
+                    display: block
+                &:nth-child(3)
+                    display: none
+                &:nth-child(4)
+                    display: none
+                &:nth-child(5)
+                    display: none
+                    
+        ._loft_four_button_wrap
+            bottom: 20px
+            right: 50%
+            transform: translateX(50%)
+            span
+                font-size: 20px
+                margin-right: 18px
+            img
+                width: 15px
+    ._item_loft_three
+        justify-content: start
+        ._loft_items
+            li
+                &:nth-child(3)
+                    display: none
+                &:nth-child(4)
+                    display: none
     .beauty-master_info 
         ._info__title 
             ._info__subtitle 
