@@ -999,6 +999,141 @@ body
     li
         font-size: clamp(14px, calc(14px + (32 - 14) * ((100vw - 375px) / (1920 - 375))),32px)
         font-weight: 600
+//---------------faq----------------------
+.faq_title
+    margin-top: clamp(80px, calc(80px + (130 - 80) * ((100vw - 375px) / (1920 - 375))), 130px)
+
+.faq_accordion
+    margin-top: 80px
+
+
+
+
+
+//---------------------------------------
+.__container_accordioin
+    max-width: 1463px
+    margin: 0 auto
+    position: relative
+    // display: flex
+// .accordion__item
+// .acc_ctrl
+.acc_title
+    font-size: 36px
+    font-family: 'Kyiv Type Serif'
+    font-weight: 600
+    border-bottom: solid 1px #626262
+    padding: 50px 0
+    display: flex
+    transition: all .7s ease
+
+
+
+p 
+
+    font-size: 32px
+    padding: 40px 0 70px 0
+    // line-height: 1.5
+    // margin: 20px
+
+
+// .container 
+    // max-width: 640px
+    // margin: 0 auto
+
+
+// .acc 
+    // margin: 90px 0
+    // overflow: hidden
+    // padding: 0
+
+
+// .acc 
+//     li 
+
+
+
+.acc_ctrl 
+    // background: #FFFFFF
+    // border: none
+    
+    cursor: pointer
+    // display: flex
+    // outline: none
+    // padding: 2em
+    position: relative
+    // text-align: center
+    width: 100%
+    // transition: all .7s ease
+
+.__container_accordioin:before 
+    background: #000
+    content: ''
+    height: 2px
+    // margin-right: 37px
+    position: absolute
+    right: 20px
+    top: 50%
+    -webkit-transform: rotate(90deg)
+    -moz-transform: rotate(90deg)
+    -ms-transform: rotate(90deg)
+    -o-transform: rotate(90deg)
+    transform: rotate(90deg)
+    -webkit-transition: all 0.2s ease-in-out
+    -moz-transition: all 0.2s ease-in-out
+    -ms-transition: all 0.2s ease-in-out
+    -o-transition: all 0.2s ease-in-out
+    transition: all 0.2s ease-in-out
+    width: 30px
+
+
+.__container_accordioin:after 
+    background: #000
+    content: ''
+    height: 2px
+    // margin-right: 37px
+    position: absolute
+    right: 20px
+    top: 50%
+    width: 30px
+
+
+.__container_accordioin.active:before 
+    -webkit-transform: rotate(0deg)
+    -moz-transform: rotate(0deg)
+    -ms-transform: rotate(0deg)
+    -o-transform: rotate(0deg)
+    transform: rotate(0deg)
+
+
+.__container_accordioin.active h2, 
+.__container_accordioin:focus h2 
+    position: relative    
+
+
+.acc_panel 
+    background: #F0F7FF
+    display: block
+    height: 0
+    overflow: hidden
+    transition: all .4s ease
+    max-width: 1463px
+    margin: 0 auto
+    p
+        text-align: left
+        display: block
+        max-width: 1167px
+        // margin: 0 auto
+._active
+    // display: block
+    height: auto
+    // overflow: visible
+.acc_ctrl_active
+    background-color: #F0F7FF
+.active
+    .acc_title
+        border-bottom: none
+
 //---------------------------------------
         
 @import './_footer'
