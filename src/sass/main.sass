@@ -876,13 +876,71 @@ body
             padding-bottom: 10px
             padding-top: 10px
 
-
-            
-
-    
-//---------------------------------------
 .beauty-master
     padding-bottom: clamp(80px, calc(80px + (130 - 80) * ((100vw - 375px) / (1920 - 375))), 130px)
+//--------------english-loft-------------------------
+.english-loft
+    padding: 80px 0
+    background-color: #fff
+
+
+.english-loft__title
+    margin-bottom: 61px
+    display: flex
+    justify-content: center
+    gap: 30px
+    h2
+        text-align: center
+        font-size: clamp(24px, calc(24px + (50 - 24) * ((100vw - 375px) / (1920 - 375))),50px)
+        font-weight: 600
+        white-space: nowrap
+    span
+        font-size: clamp(24px, calc(24px + (60 - 24) * ((100vw - 375px) / (1920 - 375))),60px)
+        font-weight: 600
+        color: $color-FF8A00
+        font-family: "Lacquer", system-ui
+        white-space: nowrap
+
+.english-loft_main
+    display: grid
+    // grid-template-columns: 1fr 1fr 1fr
+    // grid-template-rows: auto
+    // grid-template-rows: 200px 200px
+    grid-template-areas:"item1 item2 item3" "item4 item4 item5"
+    // grid-gap: 10px
+
+.english-loft_item
+    border:1px solid #000
+    border-radius: 20px
+._item_loft_one 
+    display: block
+    width: 573px
+    height: 305px
+    grid-area: item1
+
+._item_loft_two 
+    display: block
+    width: 425px
+    height: 305px
+    grid-area: item2
+
+._item_loft_three 
+    display: block
+    width: 721px
+    height: 305px
+    grid-area: item3
+
+._item_loft_four 
+    display: block
+    width: 1167px
+    height: 444px
+    grid-area: item4
+
+._item_loft_five 
+    display: block
+    width: 573px
+    height: 444px
+    grid-area: item5
 //---------------------------------------
         
 @import './_footer'
