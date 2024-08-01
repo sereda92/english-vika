@@ -1,0 +1,887 @@
+@import './blocks/*.sass'
+
+
+//-------------------
+html 
+    scroll-behavior: smooth
+a
+    // color: $color-black
+    text-decoration: none
+//----font-----
+
+//-------------
+@font-face
+    font-family: 'Kyiv Type Serif'
+    src: url('./../fonts/Kyiv*TypeSerif.woff2') format('woff2')
+    src: url('./../fonts/Kyiv*TypeSerif.woff') format('woff')
+    src: url('./../fonts/KyivTypeSerif-Light3.otf') format('opentype')
+    src: url('./../fonts/KyivTypeSerif-Light3.ttf') format('truetype')
+    src: url('./../fonts/KyivTypeSerif-Light3.woff') format('woff')
+    src: url('./../fonts/KyivTypeSerif-Light3.woff2') format('woff2')
+    
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    font-family: 'KyivTypeTitling-Medium'
+    src: url('./../fonts/KyivTypeTitling-Medium.otf') format('opentype')
+
+
+
+body
+    font-family: 'Kyiv Type Serif'
+    font-weight: 400
+    font-style: normal
+    font-size: 16px
+    background-color: $color-CFE5FF
+
+
+
+
+.wrapper
+    max-width: 1920px
+    overflow: hidden
+    margin: 0 auto
+    // padding: 0 20px
+
+.body_non_scroll
+    overflow: hidden
+.__container
+    max-width: 1762px
+    margin: 0 auto
+    padding: 0 20px
+
+.main__body
+    text-align: center
+    position: relative
+
+.lacquer-regular
+    font-family: "Lacquer", system-ui
+    font-weight: 400
+    font-style: normal
+
+.main__title
+    position: absolute
+    top: 0
+    left: 0
+    display: inline-block
+    width: 100%
+    height: 100%
+    h1,
+    h2
+        position: absolute
+        font-family: "Lacquer", system-ui
+        font-weight: 400
+        font-style: normal
+    h1
+        font-size: clamp(92px, calc(92px + (172 - 92) * ((100vw - 768px) / (1920 - 768))), 172px)
+        top: -55px
+        right: 22%
+    h2
+        color: $color-FF8A00
+        font-size: clamp(80px, calc(80px + (145 - 80) * ((100vw - 768px) / (1920 - 768))), 145px)
+        top: 25px
+        right: 0
+
+.main__title_info
+    max-width: 570px
+    text-align: left
+    position: absolute
+    top: clamp(60px, calc(60px + (130 - 60) * ((100vw - 768px) / (1920 - 768))),130px)
+    h3
+        color: $color-FF8A00
+        font-family: "Lacquer", system-ui
+        font-weight: 400
+        font-style: normal
+        font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 768px) / (1920 - 768))),40px)
+        margin-left: 125px
+.main__title_list
+    text-align: left
+    display: flex
+    flex-direction: column
+    gap: 30px
+    margin-top: 40px
+    .first
+        font-size: clamp(18px, calc(18px + (32 - 18) * ((100vw - 768px) / (1920 - 768))),32px)
+            
+    li
+        font-weight: 600
+        font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 768px) / (1920 - 768))),28px)
+    span
+        color: $color-FF8A00
+        font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 768px) / (1920 - 768))),28px)
+.main__title_wrap
+    position: relative
+    height: 100%
+
+
+.main__body__img
+    position: relative
+    height: 700px
+    overflow: hidden
+    padding: 20px 0 0 0
+    height: auto
+    max-width: clamp(597px, calc(597px + (763 - 597) * ((100vw - 768px) / (1920 - 768))), 763px)
+
+.img__position
+    position: absolute
+
+.ears
+    top: 1%
+    left: 45.5%
+
+
+.main-text-one
+    top: 50%
+    left: 27%
+.main-text-two
+    top: 47%
+    right: 29%
+
+.main__line_wrap
+    width: 100%
+    white-space: nowrap
+    position: relative
+
+.main__line_item
+    background-color: $color-FFD7A9
+    display: block
+    width: 120%
+    padding: 14px 0
+    display: flex
+    overflow: hidden
+    p
+        width: 100%
+        animation: marquee 20s linear infinite
+        font-size: 28px
+        margin-left: 31.8px
+
+
+.image-container
+    position: relative
+    display: inline-block
+.list_container
+    position: relative
+.image
+    display: block
+    max-width: 100%
+    height: auto
+.hot_span
+    position: absolute
+    font-family: "Lacquer", system-ui
+    font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 768px) / (1920 - 768))),40px)
+
+._omg
+    right: 19%
+    top: -19px
+    transform: rotate(-10deg)
+._never
+    bottom: 6px
+    right: 33%
+    transform: rotate(-9deg)
+._no
+    top: 50px
+    left: 25%
+    transform: rotate(-7deg)
+
+._arrow
+    position: absolute
+    top: clamp(140px, calc(140px + (250 - 140) * ((100vw - 768px) / (1920 - 768))),250px)
+    right: 28%
+
+.subtitle
+    position: absolute
+    max-width: clamp(350px, calc(350px + (438 - 350) * ((100vw - 768px) / (1920 - 768))), 438px)
+    top: 262px
+    right: 0
+    p
+        font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 768px) / (1920 - 768))),28px)
+.hotspot
+    position: absolute
+
+.hotspot:hover 
+    transform: translate(-50%, -50%) scale(1.2)
+
+
+.rotate
+    transform: rotate(3deg) translate(-30px, -25px)
+
+._line_run
+    transform: translateX(-30px)
+
+@keyframes marquee
+    from 
+        transform: translateX(0)
+    to 
+        transform: translateX(-1000%)
+//------------about_me------------------------
+.about_me
+    margin-top: clamp(80px, calc(80px + (160 - 80) * ((100vw - 375px) / (1920 - 375))), 160px)
+.about_me_img_plan
+    display: none
+
+.about_me_img
+    width: clamp(326px, calc(326px + (482 - 326) * ((100vw - 768px) / (1920 - 768))), 482px) !important
+    height: clamp(352px, calc(352px + (525 - 352) * ((100vw - 768px) / (1920 - 768))), 522px) !important
+
+._main_foto
+    max-width: clamp(297px, 297px + 145*(100vw - 768px) / 1152, 442px) !important
+    max-height: clamp(292px, 292px + 146*(100vw - 768px) / 1152, 438px) !important
+.title_section
+    h2
+        font-size: clamp(24px, calc(24px + (60 - 24) * ((100vw - 375px) / (1280 - 375))), 60px)
+        color: $color-FF8A00
+        font-family: "Lacquer", system-ui
+        text-align: center
+
+.about_me_title
+    margin-bottom: 30px
+
+.img_wrap
+    max-width: clamp(326px, calc(326px + (482 - 326) * ((100vw - 375px) / (1280 - 375))), 482px)
+    max-height: clamp(352px, calc(352px + (525 - 352) * ((100vw - 375px) / (1280 - 375))), 525px)
+    position: relative
+    padding-top: clamp(15px, calc(15px + (20 - 15) * ((100vw - 375px) / (1280 - 375))), 20px)
+    padding-right: clamp(15px, calc(15px + (20 - 15) * ((100vw - 375px) / (1280 - 375))), 20px)
+    padding-bottom: clamp(47px, calc(47px + (67 - 47) * ((100vw - 375px) / (1280 - 375))), 67px)
+    padding-left: clamp(15px, calc(15px + (20 - 15) * ((100vw - 375px) / (1280 - 375))), 20px)
+    background-color: #fff
+    p
+        font-size: clamp(16px, calc(16px + (30 - 16) * ((100vw - 375px) / (1280 - 375))), 30px)
+        position: absolute
+        bottom: clamp(15px, calc(15px + (23 - 15) * ((100vw - 375px) / (1280 - 375))), 23px)
+        left: 50%
+        transform: translateX(-50%)
+._stick
+    position: absolute
+    top: -8%
+    left: -11%
+    width: clamp(160px, calc(160px + (226 - 160) * ((100vw - 375px) / (1280 - 375))), 226px)
+.about_me_main
+    display: flex
+    gap: 30px
+    margin-top: 25px
+.about_me_text
+    position: relative
+    p
+        font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 375px) / (1280 - 375))), 28px)
+        line-height: 50px
+        &:nth-child(3)
+            margin-top: 60px
+
+.notebook
+    background: linear-gradient(to bottom, transparent 49px, #A5A5A5 49px, #A5A5A5 50px, transparent 50px)
+    background-size: 100% 50px
+    line-height: 50px
+            
+._info_title
+    display: flex
+    flex-direction: column
+    gap: 15px
+    p
+        color: $color-FF8A00
+        font-size: 30px
+        font-family: "Lacquer", system-ui
+        border-bottom: 1px solid $color-A5A5A5
+    span
+        color: #000
+        font-size: 28px
+        font-family: 'Kyiv Type Serif'
+        margin-right: 6px
+
+.about_me_link_wrap
+    display: flex
+    justify-content: end
+    margin-top: 90px
+    a
+        color: $color-FF8A00
+        font-weight: 600
+        font-size: 52px
+        img
+            width: 30px
+            height: 31px
+//------------what_about------------------------
+.what_about
+    margin-top: 83px
+.what_about_title
+    margin-bottom: 52px
+.what_about_main
+    display: flex
+    justify-content: space-between
+    position: relative
+    gap: 30px
+    .__main_list
+        li
+            font-size: clamp(23px, calc(23px + (32 - 23) * ((100vw - 1440px) / (1920 - 1440))), 32px)
+            &:nth-child(1)
+                margin: 7px 0 0 42px
+            &:nth-child(2)
+                margin: 32px 0 0 114px
+            &:nth-child(3)
+                margin: 81px 0 0 136px
+            &:nth-child(4)
+                margin: 81px 0 0 89px
+            &:nth-child(5)
+                margin: 52px 0 0 0px
+    .__main_text
+        margin-left: 112px
+    .__round__wrap
+        position: absolute
+        left: -400px
+    .__main_round
+        width: clamp(440px, calc(440px + (594 - 440) * ((100vw - 768px) / (1920 - 768))),594px)
+        height: clamp(440px, calc(440px + (594 - 440) * ((100vw - 768px) / (1920 - 768))),594px)
+        border: 3px solid #000
+        border-radius: 50%
+        position: relative
+        span
+            display: inline-block
+            width: 20px
+            height: 20px
+            background-color: $color-FF8A00
+            border-radius: 50%
+            position: absolute
+            &:nth-child(1)
+                top: 5%
+                right: 22%
+            &:nth-child(2)
+                top: 21%
+                right: 6%
+            &:nth-child(3)
+                top: 47%
+                right: -2%
+            &:nth-child(4)
+                right: 6%
+                bottom: 21%
+            &:nth-child(5)
+                right: 20%
+                bottom: 7%
+                
+    .__main_subround
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: clamp(330px, calc(330px + (446 - 330) * ((100vw - 768px) / (1920 - 768))),446px)
+        height: clamp(330px, calc(330px + (446 - 330) * ((100vw - 768px) / (1920 - 768))),446px)
+        border: 3px solid #000
+        border-radius: 50%
+
+//-----------------subscriptions------------
+.subscriptions
+    margin-top: clamp(80px, calc(80px + (130 - 80) * (100vw - 375px) / (1920 - 375)), 130px)
+
+.filter__block
+    display: flex
+    justify-content: space-between
+
+
+.filter__buttons-one
+    display: flex
+    justify-content: space-between
+    gap: clamp(20px, calc(20px + (46 - 20) * ((100vw - 768px) / (1920 - 768))), 46px)
+    margin-bottom: 60px
+    button
+        font-size: clamp(18px, calc(18px + (32 - 18) * ((100vw - 768px) / (1920 - 768))), 32px)
+        width: 100%
+        cursor: pointer
+        font-family: 'Kyiv Type Serif'
+        border: 1px solid $color-FF8A00
+        border-radius: 76px 
+        max-width: 404px
+        width: 100%
+        min-height: 63px
+        display: flex
+        justify-content: center
+        align-items: center
+    .__active
+        background-color: $color-FF8A00
+        color: #fff
+.border__dashed
+    border-top: 1px dashed #000
+    border-bottom: 1px dashed #000
+    padding: 20px 0
+
+.subscriptions__main
+    margin-top: 80px
+.filter__main
+    display: block
+    .filter__block
+        display: none
+        gap: 20px
+        overflow-x: auto
+    .__active
+        display: flex
+.filter-container
+    display: none
+._individ-two
+    height: 100%
+.filter__item
+    min-width: 325px
+    padding-top: clamp(20px, calc(20px + (60 - 20) * ((100vw - 375px) / (1920 - 375))), 60px) 
+    padding-bottom: clamp(30px, calc(30px + (40 - 30) * ((100vw - 375px) / (1920 - 375))), 40px) 
+    width: 573px
+    height: 100%
+    background: url('../img/filter-back.jpg')
+    background-size: cover
+    .__item__title
+        display: flex
+        flex-direction: column
+        gap: clamp(20px, calc(20px + (29 - 20) * ((100vw - 375px) / (1920 - 375))), 29px) 
+        margin-bottom: clamp(20px, calc(20px + (40 - 20) * ((100vw - 375px) / (1920 - 375))), 40px) 
+        align-items: center
+        h4
+            font-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 375px) / (1920 - 375))), 28px) 
+            font-weight: 600
+        p
+            font-size: clamp(18px, calc(18px + (24 - 18) * ((100vw - 375px) / (1920 - 375))), 24px) 
+            font-weight: 600
+            color: $color-FF8A00
+    .__item_info
+        p
+            font-size: clamp(18px, calc(18px + (23 - 18) * ((100vw - 375px) / (1920 - 375))), 23px) 
+            text-align: center
+    .__list
+        padding-top: clamp(30px, calc(30px + (40 - 30) * ((100vw - 375px) / (1920 - 375))), 40px) 
+        padding-bottom: clamp(30px, calc(30px + (60 - 30) * ((100vw - 375px) / (1920 - 375))), 60px) 
+        padding-left: clamp(10px, calc(10px + (20 - 10) * ((100vw - 375px) / (1920 - 375))), 20px) 
+        padding-right: clamp(5px, calc(5px + (20 - 5) * ((100vw - 375px) / (1920 - 375))), 20px) 
+        display: flex
+        flex-direction: column
+        gap: clamp(20px, calc(20px + (30 - 20) * ((100vw - 375px) / (1920 - 375))), 30px) 
+        
+        li
+            font-size: clamp(16px, calc(16px + (22 - 16) * ((100vw - 375px) / (1920 - 375))), 22px) 
+    .__item_info_price
+        display: flex
+        justify-content: space-between
+        padding: 21px 20px 23px 20px
+        p
+            font-size: 22px
+            font-weight: 600
+    .__item_btn
+        background-color: $color-FF8A00
+        font-size: 24px
+        color: #fff
+        border-radius: 58px
+        width: 252px
+        min-height: 54px 
+        cursor: pointer
+    .__item_btn_wrap
+        margin-top: 40px
+        width: 100%
+        display: flex   
+        justify-content: center
+    .__item_info_discount
+        display: flex
+        justify-content: space-between
+        p
+            padding: 30px 20px 29px 20px
+            font-size: 22px
+            font-weight: 600
+            &:nth-child(1)
+                border-top: 1px dashed #000
+                width: 50%
+
+._individ 
+    .__list
+        padding-top: clamp(30px, calc(30px + (40 - 30) * ((100vw - 375px) / (1920 - 375))),40px)
+        padding-bottom: clamp(20px, calc(20px + (86 - 20) * ((100vw - 375px) / (1920 - 375))),86px)
+        padding-left: 10px
+        padding-right: 10px
+        
+._individ-two
+    min-height: 100%
+
+.__item__title
+    padding: 0 20px
+.reader__btn_filter
+    .filter__item
+        margin: 0 auto
+    .__item__title
+        p
+            font-size: 18px
+.filter__non-active-buttons
+    display: flex
+    flex-direction: column
+    gap: 20px
+.substriction_footer
+    display: flex
+    align-items: flex-end
+    justify-content: flex-end
+    a
+        font-size: 22px
+        color: #000
+        font-weight: 600
+        margin-right: 30px
+    img
+        width: 30px
+        height: 30px
+
+//------------------------------------
+//--------------slider----------------
+.slider
+    width: 100%
+    margin: 0 auto
+.slider .slide 
+    background: #ccc
+    border: 1px solid #333
+    height: 200px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 2em
+.slick-list
+    width: 100%
+
+.slick-dots 
+    li 
+        button:before
+            opacity: 1
+            color: #fff
+
+
+//-----------container-madia----------
+.filter-container 
+    width: 100%
+    margin: 0 auto
+
+
+.filter-buttons 
+    text-align: center
+    margin-bottom: 20px
+
+.filter_block 
+    display: none
+
+
+.slider 
+    width: 100%
+
+.slaid-filter-btns
+    ._active
+        background-color: #FF8A00
+        color: #fff
+
+.slaid-filter-btn
+    font-size: 32px
+    cursor: pointer
+    font-family: 'Kyiv Type Serif'
+    border: 1px solid $color-FF8A00
+    border-radius: 76px 
+    max-width: 404px
+    width: 100%
+    min-height: 63px
+    display: flex
+    justify-content: center
+    align-items: center
+
+.slick-dots li.slick-active button:before
+    opacity: 1
+    color: $color-FF8A00 !important
+.slick-dots li button:before
+    font-size: 20px
+.slick-dots li button
+    padding: 0
+.slick-dots li
+    margin: 0
+.slick-dots
+    display: flex
+    justify-content: center
+    gap: 29px
+    position: relative
+    margin-top: 30px
+    margin-bottom: 40px
+    bottom: 0
+
+.slick-dotted.slick-slider 
+    margin-bottom: 0
+//------------------------------------
+.slider 
+    .slide
+        height: 100%
+        padding: 0
+        background: none
+        border: none
+        margin-right: 10px
+//-------------special-----------------------
+.special
+    margin-top: clamp(80px, calc(80px + (130 - 80) * ((100vw - 375px) / (1920 - 375))),130px)
+
+.special__main
+    position: relative
+    overflow: hidden
+    margin-top: clamp(30px, calc(30px + (80 - 30) * ((100vw - 375px) / (1920 - 375))),80px)
+    padding: 60px 87px 60px 87px
+    padding-top: clamp(30px, calc(30px + (60 - 30) * ((100vw - 375px) / (1920 - 375))), 60px)
+    padding-bottom: clamp(30px, calc(30px + (60 - 30) * ((100vw - 375px) / (1920 - 375))), 60px)
+    padding-left: clamp(20px, calc(20px + (87 - 20) * ((100vw - 375px) / (1920 - 375))), 87px)
+    padding-right: clamp(20px, calc(20px + (87 - 20) * ((100vw - 375px) / (1920 - 375))), 87px)
+    background: url('../img/special_back.jpg')
+
+.special__main_title
+    h2
+        font-size: clamp(20px, calc(20px + (40 - 20) * ((100vw - 375px) / (1920 - 375))), 40px)
+        font-weight: 600
+        text-align: center
+    h3
+        margin-top: 30px
+        font-weight: 600
+        text-align: center
+        font-size: clamp(20px, calc(20px + (40 - 20) * ((100vw - 375px) / (1920 - 375))), 40px)
+        color: $color-FF8A00
+
+.special__main_item
+    position: relative
+    p
+        &:nth-child(1)
+            font-size: clamp(40px, calc(40px + (64 - 40) * ((100vw - 375px) / (1240 - 375))),64px)
+            display: inline-block
+            color: #B4B4B4
+            position: absolute
+            top: -46px
+            left: -60px
+            z-index: 5
+            font-family: 'KyivTypeTitling-Medium'
+        &:nth-child(2)
+            font-size: clamp(16px, calc(16px + (28 - 16) * ((100vw - 374px) / (1240 - 375))),28px)
+            padding: 20px
+            border-radius: 36px
+            background-color: #fff
+            position: relative
+            z-index: 10
+            span
+                color: $color-FF8A00
+.special__main_contant
+    margin-top: 110px
+.special__main_list
+    display: flex
+    flex-direction: column
+    gap: 55px
+    align-items: flex-end
+
+
+._item_one
+    max-width: clamp(673px, calc(673px + (886 - 673) * ((100vw - 1400px) / (1920 - 1400))),886px)
+    margin-right: clamp(0px, calc(0px + (72 - 0) * ((100vw - 1400px) / (1920 - 1400))),72px)
+._item_two
+    max-width: clamp(673px, calc(673px + (736 - 673) * ((100vw - 1400px) / (1920 - 1400))),736px)
+    margin-right: clamp(0px, calc(0px + (358 - 0) * ((100vw - 1400px) / (1920 - 1400))),358px)
+._item_three
+    max-width: clamp(673px, calc(673px + (815 - 673) * ((100vw - 1400px) / (1920 - 1400))),815px)
+    margin-right: clamp(0px, calc(0px + (120 - 0) * ((100vw - 1400px) / (1920 - 1400))),120px)
+._item_for
+    max-width: clamp(673px, calc(673px + (902 - 673) * ((100vw - 1400px) / (1920 - 1400))),902px)
+    margin-right: clamp(0px, calc(0px + (192 - 0) * ((100vw - 1400px) / (1920 - 1400))),192px)
+._item_five
+    max-width: clamp(673px, calc(673px + (922 - 673) * ((100vw - 1400px) / (1920 - 1400))),922px)
+    margin-right: clamp(0px, calc(0px + (27 - 0) * ((100vw - 1400px) / (1920 - 1400))),27px)
+._item_six
+    max-width: 1081px
+    max-width: clamp(673px, calc(673px + (1081 - 673) * ((100vw - 1400px) / (1920 - 1400))),1081px)
+.special__foto_wraper
+    position: absolute
+    top: 0
+    left: 0
+.special__foto_wrap
+    position: relative
+.special-foto
+    position: absolute
+    left: 0
+.special__foto_wrap
+    ._foto_one
+        top: 138px
+        transform: rotate(11deg)
+        left: -50px
+    ._foto_two
+        top: 485px
+        transform: rotate(-13deg)
+        left: 40px
+
+
+.special__btn
+    margin-top: 60px
+    display: flex
+    justify-content: center
+    a   
+        position: relative
+        max-width: 449px
+        width: 100%
+        min-height: 60px
+        border: 1px solid $color-FF8A00
+        border-radius: 58px
+        display: flex
+        align-items: center
+        justify-content: center
+        color: $color-FF8A00
+        font-size: 24px
+    .arrow__wrap
+        width: 56px
+        height: 56px
+        border-radius: 50%
+        background-color: $color-FF8A00
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        top: 50%
+        transform: translate(0,-50%)
+        right: 1px
+        img
+//------------beauty-master----------
+.beauty-master_title
+    margin-top: clamp(80px, calc(80px + (130 - 80) * ((100vw - 375px) / (1920 - 375))),130px)
+.beauty-master_body
+    margin-top: 63px
+    display: flex
+    gap: 50px
+.beauty-master_info
+    position: relative
+    .beauty-master_foto
+        margin-top: auto
+    .beauty-master_foto_plan
+        display: none
+        position: absolute
+        top: 0
+        right: 0
+    ._info__title
+        h3
+            font-weight: 600
+            font-size: clamp(30px, calc(30px + (50 - 30) * ((100vw - 768px) / (1920 - 768))),50px)
+            text-transform: uppercase
+            margin-bottom: 40px
+        ._info__subtitle
+            display: flex
+            p
+                &:nth-child(1)
+                    margin-right: 31px
+                    font-size: clamp(30px, calc(30px + (50 - 30) * ((100vw - 768px) / (1920 - 768))),50px)
+                    text-transform: uppercase
+                    font-weight: 600
+                    
+                &:nth-child(2)
+                    font-size: clamp(20px, calc(20px + (32 - 20) * ((100vw - 768px) / (1920 - 768))),32px)
+                    font-weight: 600
+    ._info__main_title
+        margin-top: 60px
+        margin-bottom: 40px
+        text-align: center
+        h3
+            font-size: clamp(30px, calc(30px + (50 - 30) * ((100vw - 768px) / (1920 - 768))),50px)
+            color: $color-FF8A00
+            font-family: "Lacquer", system-ui
+    ._info__main
+        ._info__main_body
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: 1fr 1fr
+            row-gap: 30px
+            column-gap: 20px
+            ._body__item
+                border: 2px solid #fff
+                padding: 0 39px
+                border-radius: 30px
+                min-height: clamp(70px, calc(70px + (142 - 70) * ((100vw - 768px) / (1920 - 768))),142px)
+                display: flex
+                justify-content: center
+                align-items: center
+                // width: clamp(162px, calc(162px + (573 - 162) * ((100vw - 768px) / (1920 - 768))),573px)
+                position: relative
+                p
+                    font-size: clamp(14px, calc(14px + (32 - 14) * ((100vw - 768px) / (1920 - 768))),32px)
+                    text-align: center
+                span
+                    position: absolute
+                    width: 10px
+                    height: 10px
+                    border-radius: 50%
+                    background-color: $color-FF8A00
+                ._one
+                    top: 0
+                    left: 6px
+                ._two
+                    top: 0
+                    right: 6px
+                ._three
+                    bottom: 0
+                    left: 6px
+                ._for
+                    bottom: 0
+                    right: 6px
+            ._body__item_med
+                p
+                    &:nth-child(1)
+                        display: block
+                    &:nth-child(2)
+                        display: none
+                        
+.whats-inside
+    margin-top: clamp(27px, calc(27px + (100 - 27) * ((100vw - 375px) / (1920 - 375))),100px)
+.whats-inside__title
+    h3
+        font-size: clamp(20px, calc(20px + (50 - 20) * ((100vw - 375px) / (1920 - 375))),50px)
+        text-transform: uppercase
+        font-weight: 600
+.whats-inside_nav
+    display: flex
+    justify-content: space-between
+    gap: 100px
+.whats-inside_body
+    margin-top: clamp(30px, calc(30px + (100 - 30) * ((100vw - 375px) / (1920 - 375))),100px)
+.nav-revers
+    display: flex
+    justify-content: space-between
+    flex-direction: row-reverse
+    margin-top: 50px
+
+
+.inside_list
+    width: 957px
+    gap: 18px
+    display: flex
+    flex-direction: column
+    li
+        display: flex
+        position: relative
+        z-index: 20
+        min-height: 117px
+        span
+            top: 50%
+            transform: translateY(-50%)
+            position: relative
+            z-index: 20
+            font-family: "Lacquer", system-ui
+            font-size: clamp(29px, calc(29px + (50 - 29) * ((100vw - 375px) / (1920 - 375))),50px)
+            color: $color-FF8A00
+            display: inline-flex
+            width: 107px
+            height: 75px
+            border-radius: 22px
+            align-items: center
+            justify-content: center
+            background-color: #fff
+        p
+            position: relative
+            z-index: 10
+            font-size: clamp(16px, calc(16px + (32 - 16) * ((100vw - 375px) / (1920 - 375))),32px)
+            font-weight: 600
+            display: inline-flex
+            transform: translateX(-20px)
+            align-items: center
+            width: 100%
+            padding-left: clamp(35px, calc(35px + (48 - 35) * ((100vw - 375px) / (1920 - 375))),48px)
+            padding-right: clamp(10px, calc(10px + (30 - 10) * ((100vw - 375px) / (1920 - 375))),30px)
+            border: 2px solid #fff
+            border-radius: 30px
+            padding-bottom: 10px
+            padding-top: 10px
+
+
+            
+
+    
+    //---------------------------------------
+        
+@import './_footer'
+@import './_media'
+

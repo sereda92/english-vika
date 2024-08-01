@@ -1,0 +1,1 @@
+document.addEventListener("scroll",(function(){const t=document.querySelector(".parallax-bg");let e=window.scrollY;t.style.transform="translateY("+.5*e+"px)"}));
