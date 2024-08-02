@@ -1012,65 +1012,30 @@ body
 
 //---------------------------------------
 .__container_accordioin
-    max-width: 1463px
+    max-width: 1493px
     margin: 0 auto
     position: relative
-    // display: flex
-// .accordion__item
-// .acc_ctrl
+    padding: 0 15px
+.acc_title_wrap
+    border-bottom: solid 1px #626262
 .acc_title
-    font-size: 36px
+    font-size: clamp(18px, calc(18px + (36 - 18) * ((100vw - 768px) / (1920 - 768))),36px)
     font-family: 'Kyiv Type Serif'
     font-weight: 600
-    border-bottom: solid 1px #626262
+    width: 90%
     padding: 50px 0
     display: flex
     transition: all .7s ease
-
-
-
-p 
-
-    font-size: 32px
-    padding: 40px 0 70px 0
-    // line-height: 1.5
-    // margin: 20px
-
-
-// .container 
-    // max-width: 640px
-    // margin: 0 auto
-
-
-// .acc 
-    // margin: 90px 0
-    // overflow: hidden
-    // padding: 0
-
-
-// .acc 
-//     li 
-
-
-
+        
 .acc_ctrl 
-    // background: #FFFFFF
-    // border: none
-    
     cursor: pointer
-    // display: flex
-    // outline: none
-    // padding: 2em
     position: relative
-    // text-align: center
     width: 100%
-    // transition: all .7s ease
 
 .__container_accordioin:before 
     background: #000
     content: ''
     height: 2px
-    // margin-right: 37px
     position: absolute
     right: 20px
     top: 50%
@@ -1086,17 +1051,14 @@ p
     transition: all 0.2s ease-in-out
     width: 30px
 
-
 .__container_accordioin:after 
     background: #000
     content: ''
     height: 2px
-    // margin-right: 37px
     position: absolute
     right: 20px
     top: 50%
     width: 30px
-
 
 .__container_accordioin.active:before 
     -webkit-transform: rotate(0deg)
@@ -1105,11 +1067,9 @@ p
     -o-transform: rotate(0deg)
     transform: rotate(0deg)
 
-
 .__container_accordioin.active h2, 
 .__container_accordioin:focus h2 
     position: relative    
-
 
 .acc_panel 
     background: #F0F7FF
@@ -1117,17 +1077,19 @@ p
     height: 0
     overflow: hidden
     transition: all .4s ease
-    max-width: 1463px
+    max-width: 1493px
     margin: 0 auto
+    padding: 0 15px
     p
         text-align: left
         display: block
         max-width: 1167px
-        // margin: 0 auto
+        font-size: clamp(14px, calc(14px + (32 - 14) * ((100vw - 375px) / (1920 - 375))),32px)
+        padding: 40px 0 70px 0
+
 ._active
-    // display: block
     height: auto
-    // overflow: visible
+
 .acc_ctrl_active
     background-color: #F0F7FF
 .active
