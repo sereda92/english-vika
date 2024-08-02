@@ -1,0 +1,41 @@
+.footer
+    min-height: 240px
+    width: 100%
+    background-color: #fff
+    padding: 60px 0 60px 0
+.footer_main
+    display: flex
+    justify-content: space-between
+    gap: 30px
+
+.footer_list
+    display: flex
+    flex-wrap: wrap
+    gap: 30px
+    li      
+        a
+            font-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 375px) / (1920 - 375))),28px)
+            color: #000
+            white-space: nowrap
+
+.footer_soc_item
+    display: flex
+    gap: 27px
+    p
+        font-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 375px) / (1920 - 375))),28px)
+        white-space: nowrap
+    a
+        font-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 375px) / (1920 - 375))),28px)
+        color: $color-FF8A00
+        white-space: nowrap
+        font-family: "Lacquer", system-ui
+
+
+.footer_soc
+    display: flex
+    flex-direction: column
+    gap: 30px
+
+.f-1
+    display: flex
+    gap: 30px
