@@ -1096,6 +1096,36 @@ body
     .acc_title
         border-bottom: none
 
+
+.rules_block 
+    padding-top: 130px
+    max-width: 1271px
+    margin: 0 auto
+.rules_title 
+    margin-bottom: 80px
+    text-align: center
+    h3
+        font-size: clamp(24px, calc(24px + (60 - 24) * ((100vw - 375px) / (1920 - 375))),60px)
+        font-weight: 600
+.rules_main 
+.rules_list 
+    display: flex
+    flex-direction: column
+    gap: 50px
+    li
+        display: flex
+        gap: 36px
+        font-size: clamp(14px, calc(14px + (26 - 14) * ((100vw - 375px) / (1920 - 375))),26px)
+        span
+            font-size: clamp(16px, calc(16px + (30 - 16) * ((100vw - 375px) / (1920 - 375))),30px)
+            font-weight: 600
+
+.notebook_rules
+    background: linear-gradient(to bottom, transparent 49px, #A5A5A5 49px, #A5A5A5 50px, transparent 50px)
+    background-size: 100% 50px
+    line-height: 50px
+    box-sizing: border-box
+
 //---------------------------------------
         
 @import './_footer'
