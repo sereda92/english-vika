@@ -1107,7 +1107,6 @@ body
     h3
         font-size: clamp(24px, calc(24px + (60 - 24) * ((100vw - 375px) / (1920 - 375))),60px)
         font-weight: 600
-.rules_main 
 .rules_list 
     display: flex
     flex-direction: column
@@ -1127,7 +1126,36 @@ body
     box-sizing: border-box
 
 //---------------------------------------
-        
+.contact_title
+    margin-top: clamp(80px, calc(80px + (130 - 80) * ((100vw - 375px) / (1920 - 375))), 130px)
+.contact_main
+    display: flex
+    margin-top: 80px
+    gap: 89px
+.contact_soc
+    display: flex
+    flex-direction: column
+    gap: 30px
+    a
+        font-size: 44px
+        color: #000
+        font-weight: 600
+        width: 657px
+        max-width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: #fff
+        border-radius: 50px
+        min-height: 91px
+
+.contact_info
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    p
+        font-size: 28px
+//---------------------------------------
 @import './_footer'
 @import './_media'
 
