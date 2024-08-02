@@ -1126,21 +1126,24 @@ body
     box-sizing: border-box
 
 //---------------------------------------
+.contact
+    padding-bottom: clamp(60px, calc(60px + (130 - 60) * ((100vw - 375px) / (1920 - 375))), 130px)
 .contact_title
     margin-top: clamp(80px, calc(80px + (130 - 80) * ((100vw - 375px) / (1920 - 375))), 130px)
 .contact_main
     display: flex
-    margin-top: 80px
-    gap: 89px
+    margin-top: clamp(30px, calc(30px + (80 - 30) * ((100vw - 375px) / (1920 - 375))),80px)
+    gap: clamp(50px, calc(50px + (89 - 50) * ((100vw - 768px) / (1920 - 768))),89px)
 .contact_soc
     display: flex
     flex-direction: column
     gap: 30px
     a
-        font-size: 44px
+        font-size: clamp(28px, calc(28px + (44 - 28) * ((100vw - 768px) / (1920 - 768))),44px)
         color: #000
         font-weight: 600
         width: 657px
+        width: clamp(335px, calc(335px + (657 - 335) * ((100vw - 768px) / (1920 - 768))), 657px)
         max-width: 100%
         display: flex
         align-items: center
@@ -1152,9 +1155,13 @@ body
 .contact_info
     display: flex
     flex-direction: column
-    justify-content: space-between
+    gap: 55px
+
     p
-        font-size: 28px
+        font-weight: 600
+        font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 768px) / (1920 - 768))),28px)
+._tiktok
+    display: none !important
 //---------------------------------------
 @import './_footer'
 @import './_media'
