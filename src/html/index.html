@@ -1193,13 +1193,14 @@
             <div class="__container">
                 <div class="contact_main">
                     <div class="contact_soc">
-                        <a href="#">Telegram</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">Telegram- канал</a>
+                        <a href="#" class="_telegram">Telegram</a>
+                        <a href="#" class="_instagram">Instagram</a>
+                        <a href="#" class="_tiktok">TikTok</a>
+                        <a href="#" class="_tel-chanel">Telegram- канал</a>
                     </div>
                     <div class="contact_info">
-                        <p>Знати WHAT відбувається у світі англомовного контенту, думати WHERE поїхати наступного разу (бо ти ж так гарно вмієш розмовляти) та на хвильку задуматися WHY ти раніше не почав – це все ти можеш робити, якщо почнеш вивчати English уже скоро.</p>
-                        <p>Щоб стати на крок ближчим до великої мети, звʼяжись зі мною 
+                        <p class="_info-one">Знати WHAT відбувається у світі англомовного контенту, думати WHERE поїхати наступного разу (бо ти ж так гарно вмієш розмовляти) та на хвильку задуматися WHY ти раніше не почав – це все ти можеш робити, якщо почнеш вивчати English уже скоро.</p>
+                        <p class="">Щоб стати на крок ближчим до великої мети, звʼяжись зі мною 
                             й ми обговоримо всі цілі та методи, плани та мрії. Я обіцяю почути всі твої побажання та врахувати їх у майбутньому. Слушний час – зараз, варто починати.</p>
                     </div>
                 </div>
@@ -1219,6 +1220,35 @@
                 });
             });
         });
+
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactSoc = document.querySelector('.contact_soc');
+    const infoOne = document.querySelector('._info-one');
+    
+    function moveContactSoc() {
+        if (window.innerWidth < 768) {
+            // Переместить .contact_soc после ._info-one
+            if (infoOne && contactSoc) {
+                infoOne.parentNode.insertBefore(contactSoc, infoOne.nextSibling);
+            }
+        } else {
+            // Возвращаем .contact_soc обратно в исходное положение
+            const contactMain = document.querySelector('.contact_main');
+            const originalPosition = contactMain.querySelectorAll('.contact_info')[0];
+            if (contactSoc && originalPosition) {
+                contactMain.insertBefore(contactSoc, originalPosition);
+            }
+        }
+    }
+
+    // Изначальный вызов
+    moveContactSoc();
+
+    // Обработка изменения размера окна
+    window.addEventListener('resize', moveContactSoc);
+});
 
     </script>
 <!-- --------accordion---------- -->
