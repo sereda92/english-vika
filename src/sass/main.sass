@@ -15,6 +15,8 @@ a
     src: url('./../fonts/Kyiv*TypeSerif.woff2') format('woff2')
     src: url('./../fonts/Kyiv*TypeSerif.woff') format('woff')
     src: url('./../fonts/KyivTypeSerif-Light3.otf') format('opentype')
+    src: url('./../fonts/KyivTypeSerif-Regular.otf') format('opentype')
+    
     src: url('./../fonts/KyivTypeSerif-Light3.ttf') format('truetype')
     src: url('./../fonts/KyivTypeSerif-Light3.woff') format('woff')
     src: url('./../fonts/KyivTypeSerif-Light3.woff2') format('woff2')
@@ -23,8 +25,19 @@ a
     font-style: normal
 
 @font-face
+    font-family: 'Kyiv Type regular2'
+    src: url('./../fonts/KyivTypeSerif-Regular2.otf') format('opentype')
+@font-face
+    font-family: 'Kyiv Type regular'
+    src: url('./../fonts/KyivTypeSerif-Regular.otf') format('opentype')
+
+@font-face
     font-family: 'KyivTypeTitling-Medium'
     src: url('./../fonts/KyivTypeTitling-Medium.otf') format('opentype')
+
+@font-face
+    font-family: 'Kyiv Type Sans'
+    src: url('./../fonts/KyivTypeSans-Regular.otf') format('opentype')
 
 
 
@@ -84,7 +97,7 @@ body
         right: 0
 
 .main__title_info
-    max-width: 570px
+    max-width: 580px
     text-align: left
     position: absolute
     top: clamp(60px, calc(60px + (130 - 60) * ((100vw - 768px) / (1920 - 768))),130px)
@@ -105,11 +118,12 @@ body
         font-size: clamp(18px, calc(18px + (32 - 18) * ((100vw - 768px) / (1920 - 768))),32px)
             
     li
+        position: relative
         font-weight: 600
         font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 768px) / (1920 - 768))),28px)
     span
         color: $color-FF8A00
-        font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 768px) / (1920 - 768))),28px)
+        font-size: clamp(18px, calc(18px + (32 - 18) * ((100vw - 768px) / (1920 - 768))),32px)
 .main__title_wrap
     position: relative
     height: 100%
@@ -168,22 +182,29 @@ body
     max-width: 100%
     height: auto
 .hot_span
+    z-index: -1
     position: absolute
     font-family: "Lacquer", system-ui
     font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 768px) / (1920 - 768))),40px)
 
 ._omg
-    right: 25%
-    top: -5px
+    right: 22%
+    top: -10px
     transform: rotate(-10deg)
+    font-weight: 400
+    font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 768px) / (1920 - 768))),40px)
 ._never
-    bottom: 6px
-    right: 33%
+    bottom: 8px
+    right: 37%
     transform: rotate(-9deg)
+    font-weight: 400
+    font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 768px) / (1920 - 768))),40px)
 ._no
-    top: 58px
-    left: 25%
+    top: -3px
+    left: 25.4%
     transform: rotate(-7deg)
+    font-weight: 400
+    font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 768px) / (1920 - 768))),40px)
 
 ._arrow
     position: absolute
@@ -250,7 +271,7 @@ body
     padding-left: clamp(15px, calc(15px + (20 - 15) * ((100vw - 375px) / (1280 - 375))), 20px)
     background-color: #fff
     p
-        font-weight: 600
+        font-family: 'Kyiv Type regular2'
         font-size: clamp(16px, calc(16px + (30 - 16) * ((100vw - 375px) / (1280 - 375))), 30px)
         position: absolute
         bottom: 14px
@@ -463,7 +484,8 @@ body
         gap: clamp(20px, calc(20px + (30 - 20) * ((100vw - 375px) / (1920 - 375))), 30px) 
         
         li
-            font-weight: 600
+            font-family: 'Kyiv Type Sans'
+            font-weight: 400
             font-size: clamp(16px, calc(16px + (22 - 16) * ((100vw - 375px) / (1920 - 375))), 22px) 
     .__item_info_price
         display: flex
@@ -665,6 +687,8 @@ body
             background-color: #fff
             position: relative
             z-index: 10
+            font-family: 'Kyiv Type Sans'
+            font-weight: 400
             span
                 color: $color-FF8A00
 .special__main_contant
@@ -720,6 +744,7 @@ body
     justify-content: center
     a   
         position: relative
+        overflow: hidden
         max-width: 449px
         width: 100%
         min-height: 60px
@@ -730,6 +755,27 @@ body
         justify-content: center
         color: $color-FF8A00
         font-size: 24px
+        transition: color .8s ease
+        z-index: 30
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            right: 100%
+            display: block
+            width: 100%
+            height: 100%
+            background-color: $color-FF8A00
+            transition: all .9s ease
+            border-radius: 58px
+            z-index: -1
+        &:hover
+            color: #fff
+            &::after
+                right: 0%
+            .arrow__wrap
+                animation: arrow 1s 1
+                    // background-color: #fff
     .arrow__wrap
         width: 56px
         height: 56px
@@ -740,7 +786,19 @@ body
         justify-content: center
         position: absolute
         top: 50%
+        z-index: 10
         transform: translate(0,-50%)
+        right: 1px
+        transition: all .4s ease
+
+
+
+@keyframes arrow
+    0%
+        right: 87%
+    // 50%
+    //     right: 87%
+    100%
         right: 1px
 
 //------------beauty-master----------
@@ -750,6 +808,7 @@ body
     margin-top: 63px
     display: flex
     gap: 50px
+    align-items: flex-end
 .beauty-master_info
     position: relative
     .beauty-master_foto
@@ -765,11 +824,11 @@ body
             font-size: clamp(30px, calc(30px + (50 - 30) * ((100vw - 768px) / (1920 - 768))),50px)
             text-transform: uppercase
             margin-bottom: 30px
-            margin-left: 135px
+            margin-left: clamp(50px, calc(50px + (135 - 50) * ((100vw - 680px) / (1920 - 680))),135px)
         ._info__subtitle
             display: flex
             p
-                margin-right: 31px
+                margin-right: clamp(8px, calc(8px + (31 - 8) * ((100vw - 375px) / (1920 - 375))), 31px)
                 font-size: clamp(30px, calc(30px + (50 - 30) * ((100vw - 768px) / (1920 - 768))),50px)
                 text-transform: uppercase
                 font-weight: 600
@@ -832,16 +891,24 @@ body
 
 ._info__subtitle_text
     p
-        font-size: 14px !important
-        width: 187px !important
+        font-size: clamp(14px, calc(14px + (28 - 14) * ((100vw - 375px) / (1920 - 375))),28px) !important
+        width: 100% !important
                         
 .whats-inside
     margin-top: clamp(27px, calc(27px + (100 - 27) * ((100vw - 375px) / (1920 - 375))),100px)
 .whats-inside__title
+    position: relative
     h3
         font-size: clamp(20px, calc(20px + (50 - 20) * ((100vw - 375px) / (1920 - 375))),50px)
         text-transform: uppercase
         font-weight: 600
+    img
+        position: absolute
+        top: 30px
+        left: 26%
+        max-width: clamp(69px, calc(69px + (220 - 69) * ((100vw - 680px) / (1920 - 680))), 220px)
+        max-height: 101px
+        // width: 100%
 .whats-inside_nav
     display: flex
     justify-content: space-between
@@ -1040,8 +1107,8 @@ body
     border-bottom: solid 1px #626262
 .acc_title
     font-size: clamp(18px, calc(18px + (36 - 18) * ((100vw - 768px) / (1920 - 768))),36px)
-    font-family: 'Kyiv Type Serif'
-    font-weight: 600
+    font-family: 'Kyiv Type Sans'
+    // font-weight: 600
     width: 90%
     padding: 50px 0
     display: flex
@@ -1161,7 +1228,6 @@ body
     a
         font-size: clamp(28px, calc(28px + (44 - 28) * ((100vw - 768px) / (1920 - 768))),44px)
         color: #000
-        font-weight: 600
         width: 657px
         width: clamp(335px, calc(335px + (657 - 335) * ((100vw - 768px) / (1920 - 768))), 657px)
         max-width: 100%
@@ -1180,8 +1246,7 @@ body
     p
         font-weight: 600
         font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 768px) / (1920 - 768))),28px)
-._tiktok
-    display: none !important
+
 //---------------------------------------
 @import './_footer'
 @import './_media'

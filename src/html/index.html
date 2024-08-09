@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+
     <link rel="stylesheet" href="./css/main.css">
     <title>main page</title>
 </head>
@@ -850,8 +852,8 @@
                             <div class="_info__subtitle">
                                 <p>хто</p>
                                 <div class="_info__subtitle_text">
-                                    <p>Вміє читати,</p>
-                                    <p>Має рівень А2 та вище</p>
+                                    <p>має рівень A2 та вище,</p>
+                                    <p>уміє добре READ та непогано SPEAK</p>
                                 </div>
                             </div>
                         </div>
@@ -891,6 +893,7 @@
                 <div class="whats-inside">
                     <div class="whats-inside__title">
                         <h3>Що всередині</h3>
+                        <img src="./img/icon/arrow_whats.svg" alt="">
                     </div>
                     <div class="whats-inside_body">
                         <div class="whats-inside_nav">
@@ -1423,7 +1426,76 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', adjustTopValue);
         document.addEventListener('DOMContentLoaded', adjustTopValue);
     </script>
-
+    <script>
+        gsap.fromTo("#header", 
+            { y: -100 },
+            { y: 0, duration: .2} 
+        );
+        gsap.fromTo(".main__body__img", 
+            { y: "110%" }, // начальное положение
+            { y: 0, duration: .5, ease: "power2.out", delay: .5 } // конечное положение и продолжительность
+        );        
+        gsap.fromTo(".main__title h1", 
+            { right: "110%" }, // начальное положение
+            { right: "22%", duration: .5, ease: "power2.out", delay: .5 } // конечное положение и продолжительность
+        );
+        gsap.fromTo(".main__title h2", 
+            { right: "-100%" }, // начальное положение
+            { right: "0", duration: .9, ease: "power2.out", delay: .5 } // конечное положение и продолжительность
+        );
+        gsap.fromTo("._arrow", 
+            { transform: "rotate(45deg)",
+                opacity: 0}, // начальное положение
+            { transform: "rotate(0)",
+            opacity: 1,
+             duration: .9, ease: "power2.out", delay: .9 } // конечное положение и продолжительность
+        );
+        gsap.fromTo(".main__title_info",
+        {x: "-110%"},
+        {x: "0%",
+        duration: .5, ease: "power2.out", delay: 1
+        }
+        
+        );
+        gsap.fromTo(".subtitle",
+        {x: "100%"},
+        {x: "0",
+        duration: .5, ease: "power2.out", delay: 1
+        }
+        );
+    </script>
+        <script>
+            // Function to handle adding/removing class based on media queries
+            function updateAnimation() {
+                if (window.matchMedia("(max-width: 680px)").matches) {
+                    gsap.fromTo(".main__title h1",
+                        { right: "110%" }, // начальное положение
+                        {
+                            right: "55%",
+                            duration: .5,
+                            ease: "power2.out",
+                            delay: .5
+                        }
+                    );
+                    gsap.fromTo(".main__title h2", 
+                        { right: "-100%" }, // начальное положение
+                        { right: "0%", duration: .9, ease: "power2.out", delay: .5 } // конечное положение и продолжительность
+                    );
+                    gsap.fromTo(".subtitle",
+                        {x: "130%"},
+                        {x: "0",
+                        duration: .5, ease: "power2.out", delay: 1
+                        }
+                        );
+                }
+            }
+    
+            // Initial check
+            updateAnimation();
+    
+            // Add event listener for resize
+            window.addEventListener('resize', updateAnimation);
+        </script>
     <script src="/js/index.bundle.js"></script>
 </body>
 
