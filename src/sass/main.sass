@@ -38,6 +38,9 @@ a
 @font-face
     font-family: 'Kyiv Type Sans'
     src: url('./../fonts/KyivTypeSans-Regular.otf') format('opentype')
+@font-face
+    font-family: 'Kyiv Type Sans med'
+    src: url('./../fonts/KyivTypeSans-Medium.otf') format('opentype')
 
 
 
@@ -72,7 +75,8 @@ body
     font-family: "Lacquer", system-ui
     font-weight: 400
     font-style: normal
-
+.main__section
+    overflow: hidden
 .main__title
     position: absolute
     top: 0
@@ -287,6 +291,8 @@ body
     gap: 30px
     margin-top: 25px
 .about_me_text
+    width: 100%
+
     position: relative
     p
         font-weight: 600
@@ -320,7 +326,7 @@ body
 .about_me_link_wrap
     display: flex
     justify-content: end
-    margin-top: 88px
+    margin-top: 90px
     a
         color: $color-FF8A00
         font-weight: 600
@@ -463,14 +469,14 @@ body
         align-items: center
         h4
             font-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 375px) / (1920 - 375))), 28px) 
-            font-weight: 600
+            font-family: 'Kyiv Type Sans'
         p
             font-size: clamp(18px, calc(18px + (24 - 18) * ((100vw - 375px) / (1920 - 375))), 24px) 
-            font-weight: 600
+            font-family: 'Kyiv Type Sans'
             color: $color-FF8A00
     .__item_info
         p
-            font-weight: 600
+            font-family: 'Kyiv Type Sans'
             font-size: clamp(18px, calc(18px + (23 - 18) * ((100vw - 375px) / (1920 - 375))), 23px) 
             text-align: center
     .__list
@@ -492,8 +498,9 @@ body
         justify-content: space-between
         padding: 21px 20px 23px 20px
         p
+            font-family: 'Kyiv Type Sans med'
             font-size: 22px
-            font-weight: 600
+            font-weight: 500
     .__item_btn
         background-color: $color-FF8A00
         font-size: 24px
@@ -811,13 +818,15 @@ body
     align-items: flex-end
 .beauty-master_info
     position: relative
+    width: 100%
     .beauty-master_foto
         margin-top: auto
     .beauty-master_foto_plan
         display: none
         position: absolute
         top: 0
-        right: 0
+        right: -20px
+
     ._info__title
         h3
             font-weight: 600
@@ -827,14 +836,18 @@ body
             margin-left: clamp(50px, calc(50px + (135 - 50) * ((100vw - 680px) / (1920 - 680))),135px)
         ._info__subtitle
             display: flex
+            align-items: center
             p
                 margin-right: clamp(8px, calc(8px + (31 - 8) * ((100vw - 375px) / (1920 - 375))), 31px)
                 font-size: clamp(30px, calc(30px + (50 - 30) * ((100vw - 768px) / (1920 - 768))),50px)
-                text-transform: uppercase
                 font-weight: 600
+                text-transform: uppercase
                 // &:nth-child(2)
                 //     font-size: clamp(20px, calc(20px + (32 - 20) * ((100vw - 768px) / (1920 - 768))),32px)
                 //     font-weight: 600
+        ._info__subtitle_text
+            p
+                text-transform: lowercase
     ._info__main_title
         margin-top: 60px
         margin-bottom: 40px
@@ -913,6 +926,8 @@ body
     display: flex
     justify-content: space-between
     gap: 100px
+    .about_me_img
+        margin-top: 0
 .whats-inside_body
     margin-top: clamp(30px, calc(30px + (100 - 30) * ((100vw - 375px) / (1920 - 375))),100px)
 .nav-revers
@@ -1192,16 +1207,19 @@ body
     margin-bottom: 80px
     text-align: center
     h3
+        font-family: 'Kyiv Type Sans'
         font-size: clamp(24px, calc(24px + (60 - 24) * ((100vw - 375px) / (1920 - 375))),60px)
         font-weight: 600
 .rules_list 
     display: flex
     flex-direction: column
     gap: 50px
+
     li
         display: flex
         gap: 36px
         font-size: clamp(14px, calc(14px + (26 - 14) * ((100vw - 375px) / (1920 - 375))),26px)
+        font-family: 'Kyiv Type Sans'
         span
             font-size: clamp(16px, calc(16px + (30 - 16) * ((100vw - 375px) / (1920 - 375))),30px)
             font-weight: 600
@@ -1246,6 +1264,11 @@ body
     p
         font-weight: 600
         font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 768px) / (1920 - 768))),28px)
+
+//---------------------------------------
+.demo
+    display: none
+
 
 //---------------------------------------
 @import './_footer'

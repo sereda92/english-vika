@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
-
+    <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
     <link rel="stylesheet" href="./css/main.css">
     <title>main page</title>
 </head>
@@ -180,7 +180,7 @@
                     <div class="_info_title">
                         <p><span class="span__name">Name:</span>Victoria</p>
                         <p><span class="span__age">Age:</span>28 years old </p>
-                        <p><span class="span__phone">Phone:</span>099 21 04 211</p>
+                        <p><span class="span__phone">Phone:</span>+38 099 21 04 211</p>
                     </div>
                     <div class="about_me_main">
                         <div class="about_me_img img_wrap">
@@ -188,16 +188,18 @@
                             <img src="./img/foto/1.jpg" class="_main_foto" alt="">
                             <p>Це я</p>
                         </div>
-                        <div class="about_me_text notebook">
-                            <p>
-                                Я викладачка англійської, і знаю як буває непросто у вивченні мови.
-                            </p>
-                            <p>
-                                Проте я можу показати інший бік англійської - той, де є задоволення від навчання,
-                                граматика - не страшний звір, а милий котик, де є актуальність тем і постійна практика
-                                розмови і, головне, прогрес.
-                            </p>
-                            <p>
+                        <div class="about_me_text notebook" id="trigger">
+                                <p class="demo">
+                                        Я викладачка англійської, і знаю як буває непросто у вивченні мови.
+                                    </p>
+                                    <!-- <span>|</span> -->
+                                <p class="demo">
+                                    Проте я можу показати інший бік англійської - той, де є задоволення від навчання,
+                                    граматика - не страшний звір, а милий котик, де є актуальність тем і постійна практика
+                                    розмови і, головне, прогрес.
+                                </p>
+                                <!-- <span>|</span> -->
+                            <p class="demo">
                                 Вже понад 7 років викладаю, підтримую, мотивую студентів із різних куточків світу.
                                 Тримаю руку на пульсі останніх трендів - тому ми можемо спілкуватися на найактуальніші
                                 теми сьогодення. 
@@ -905,8 +907,10 @@
             </div>
         </section>
         <section class="beauty-master">
-            <div class="beauty-master_title title_section">
-                <h2>This is a «Beauty Master» Course</h2>
+            <div class="__container">
+                <div class="beauty-master_title title_section">
+                    <h2>This is a «Beauty Master» Course</h2>
+                </div>
             </div>
             <div class="__container">
                 <div class="beauty-master_body">
@@ -1313,10 +1317,13 @@
             </div>
             <div class="footer_soc_item s-m">
                 <p>Social media:</p>
-                <a href="#">Instagram</a>
-                <a href="#">telegram</a>
-                <a href="#">English loft</a>
-                <a href="#">Tiktok</a>
+                <div class="s-m_soc">
+                    <a href="#">Instagram</a>
+                    <a href="#">telegram</a>
+                    <a href="#">English loft</a>
+                    <a href="#">Tiktok</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -1535,7 +1542,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', adjustTopValue);
         document.addEventListener('DOMContentLoaded', adjustTopValue);
     </script>
-    <script>
+    <!-- <script>
         gsap.fromTo("#header", 
             { y: -100 },
             { y: 0, duration: .2} 
@@ -1546,7 +1553,8 @@ document.addEventListener('DOMContentLoaded', function() {
         );        
         gsap.fromTo(".main__title h1", 
             { right: "110%" }, // начальное положение
-            { right: "22%", duration: .5, ease: "power2.out", delay: .5 } // конечное положение и продолжительность
+            { right: "22%", duration: .5, ease: "power2.out", delay: .5, stagger: 0.1 }
+             // конечное положение и продолжительность
         );
         gsap.fromTo(".main__title h2", 
             { right: "-100%" }, // начальное положение
@@ -1557,19 +1565,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 opacity: 0}, // начальное положение
             { transform: "rotate(0)",
             opacity: 1,
-             duration: .9, ease: "power2.out", delay: .9 } // конечное положение и продолжительность
+             duration: .9, ease: "power2.out", delay: .9, stagger: 0.1 } // конечное положение и продолжительность
         );
         gsap.fromTo(".main__title_info",
         {x: "-110%"},
         {x: "0%",
-        duration: .5, ease: "power2.out", delay: 1
+        duration: .5, ease: "power2.out", delay: 1, stagger: 0.1
         }
         
         );
         gsap.fromTo(".subtitle",
         {x: "100%"},
         {x: "0",
-        duration: .5, ease: "power2.out", delay: 1
+        duration: .5, ease: "power2.out", delay: 1, stagger: 0.1
         }
         );
     </script>
@@ -1578,22 +1586,23 @@ document.addEventListener('DOMContentLoaded', function() {
             function updateAnimation() {
                 if (window.matchMedia("(max-width: 680px)").matches) {
                     gsap.fromTo(".main__title h1",
-                        { right: "110%" }, // начальное положение
+                        { x: "10%" }, // начальное положение
                         {
-                            right: "55%",
+                            x: "-55%",
                             duration: .5,
                             ease: "power2.out",
-                            delay: .5
+                            delay: .5,
+                            stagger: 0.1
                         }
                     );
                     gsap.fromTo(".main__title h2", 
-                        { right: "-100%" }, // начальное положение
-                        { right: "0%", duration: .9, ease: "power2.out", delay: .5 } // конечное положение и продолжительность
+                        { x: "-100%" }, // начальное положение
+                        { x: "0%", duration: .9, ease: "power2.out", delay: .5, stagger: 0.1 } // конечное положение и продолжительность
                     );
                     gsap.fromTo(".subtitle",
-                        {x: "130%"},
-                        {x: "0",
-                        duration: .5, ease: "power2.out", delay: 1
+                        {x: "250%"},
+                        {x: "5%",
+                        duration: 1, ease: "power1.out",delay: 1,repeat: 0
                         }
                         );
                 }
@@ -1604,7 +1613,250 @@ document.addEventListener('DOMContentLoaded', function() {
     
             // Add event listener for resize
             window.addEventListener('resize', updateAnimation);
+        </script> -->
+        <script>
+            let initialAnimations = [];
+            let responsiveAnimations = [];
+        
+            function initializeAnimations() {
+                // Очищаем старые анимации
+                gsap.killTweensOf("#header");
+                gsap.killTweensOf(".main__body__img");
+                gsap.killTweensOf(".main__title h1");
+                gsap.killTweensOf(".main__title h2");
+                gsap.killTweensOf("._arrow");
+                gsap.killTweensOf(".main__title_info");
+                gsap.killTweensOf(".subtitle");
+        
+                // Добавляем начальные анимации
+                initialAnimations = [
+                    gsap.fromTo("#header", { y: -100 }, { y: 0, duration: .2 }),
+                    gsap.fromTo(".main__body__img", 
+                        { y: "110%",
+                            opacity: 0
+                        }, 
+                        { y: 0, 
+                            duration: .5, 
+                            ease: "power2.out", 
+                            delay: .5,
+                            opacity: 1
+                        }),
+                    gsap.fromTo(".main__title h1", { right: "110%" }, { right: "22%", duration: .5, ease: "power2.out", delay: .5, stagger: 0.1 }),
+                    gsap.fromTo(".main__title h2", { right: "-100%" }, { right: "0", duration: .9, ease: "power2.out", delay: .5 }),
+                    gsap.fromTo("._arrow", { transform: "rotate(45deg)", opacity: 0 }, { transform: "rotate(0)", opacity: 1, duration: .9, ease: "power2.out", delay: .9, stagger: 0.1 }),
+                    gsap.fromTo(".main__title_info", { x: "-110%" }, { x: "0%", duration: .5, ease: "power2.out", delay: 1, stagger: 0.1 }),
+                    gsap.fromTo(".subtitle", { x: "100%" }, { x: "0", duration: .5, ease: "power2.out", delay: 1, stagger: 0.1 })
+                ];
+            }
+        
+            function updateResponsiveAnimations() {
+                // Очищаем старые анимации
+                gsap.killTweensOf(".main__title h1");
+                gsap.killTweensOf(".main__title h2");
+                gsap.killTweensOf(".subtitle");
+        
+                // Добавляем анимации для маленьких экранов
+                responsiveAnimations = [
+                    gsap.fromTo(".main__title h1", { right: "110%" }, { right: "35%", duration: .5, ease: "power2.out", delay: .5, stagger: 0.1 }),
+                    gsap.fromTo(".main__title h2", { right: "-100%" }, { right: "0%", duration: .9, ease: "power2.out", delay: .5, stagger: 0.1 }),
+                    gsap.fromTo(".subtitle", { x: "250%" }, { x: "5%", duration: 1, ease: "power1.out", delay: 1, repeat: 0 })
+                ];
+            }
+        
+            function updateAnimation() {
+                if (window.matchMedia("(max-width: 680px)").matches) {
+                    initializeAnimations();  // Запуск начальных анимаций
+                    updateResponsiveAnimations();  // Запуск анимаций для маленьких экранов
+                } else {
+                    initializeAnimations();  // Запуск начальных анимаций
+                }
+            }
+    
+            updateAnimation();
+    
+            window.addEventListener('resize', updateAnimation);
         </script>
+ <!-- <script>
+    (function ( $ ) {
+        $.fn.typewrite = function ( options ) {
+            var settings = $.extend({
+                'extra_char': '',
+                'delay':    50,
+                'trim':     false,
+                'callback': null
+            }, options);
+    
+            function type_next_element(element, index) {
+                var final_text = element.text();
+                if (settings.trim) final_text = $.trim(final_text);
+                element.html("").css('display', 'inline-block'); // Показываем элемент перед анимацией
+    
+                function type_next_character(i) {
+                    element.html(final_text.substr(0, i) + settings.extra_char);
+                    if (i < final_text.length) {
+                        setTimeout(function() {
+                            type_next_character(i + 2);
+                        }, settings.delay);
+                    } else if (settings.callback) {
+                        settings.callback();
+                    }
+                }
+                type_next_character(0);
+            }
+    
+            function handleIntersect(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        $(entry.target).find('.demo').each(function() {
+                            type_next_element($(this));
+                        });
+                        observer.unobserve(entry.target); // Останавливаем наблюдение после анимации
+                    }
+                });
+            }
+    
+            var observer = new IntersectionObserver(handleIntersect, {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.7 // Когда элемент виден на 10%
+            });
+    
+            observer.observe(document.querySelector('#trigger'));
+    
+            return this;
+        };
+    })(jQuery);
+    
+    $(document).ready(function() {
+        // Запускаем наблюдатель для контейнера
+        $('#trigger').typewrite({
+            'delay': 70 // Установите нужную задержку для эффекта
+        });
+    });
+    </script> -->
+    <script>
+        (function ( $ ) {
+            $.fn.typewrite = function ( options ) {
+                var settings = $.extend({
+                    'extra_char': '',
+                    'delay': 30,
+                    'trim': false,
+                    'callback': null
+                }, options);
+        
+                // Функция для анимации одного элемента
+                function type_next_character(element, final_text, i, callback) {
+                    element.html(final_text.substr(0, i) + settings.extra_char);
+                    if (i < final_text.length) {
+                        setTimeout(function() {
+                            type_next_character(element, final_text, i + 1, callback);
+                        }, settings.delay);
+                    } else {
+                        if (callback) callback();
+                    }
+                }
+        
+                // Функция для запуска анимации для всех элементов
+                function type_next_element(elements, index) {
+                    if (index < elements.length) {
+                        var current_element = $(elements[index]);
+                        var final_text = current_element.text();
+                        if (settings.trim) final_text = $.trim(final_text);
+                        current_element.html("").css('display', 'block'); // Показываем элемент перед анимацией
+        
+                        type_next_character(current_element, final_text, 0, function() {
+                            // Запускаем анимацию для следующего элемента после завершения текущего
+                            setTimeout(function() {
+                                type_next_element(elements, index + 1);
+                            }, settings.delay); // Добавляем задержку между элементами
+                        });
+                    } else if (settings.callback) {
+                        settings.callback();
+                    }
+                }
+        
+                // Обработчик пересечения
+                function handleIntersect(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            var elements = $(entry.target).find('.demo');
+                            if (elements.length > 0) {
+                                type_next_element(elements, 0);
+                                observer.unobserve(entry.target); // Останавливаем наблюдение после анимации
+                            }
+                        }
+                    });
+                }
+        
+                var observer = new IntersectionObserver(handleIntersect, {
+                    root: null, // viewport
+                    rootMargin: '0px',
+                    threshold: 0.5 // Когда элемент виден на 50%
+                });
+        
+                // Наблюдаем за элементом с id="trigger"
+                observer.observe(document.querySelector('#trigger'));
+        
+                return this;
+            };
+        })(jQuery);
+        
+        $(document).ready(function() {
+            // Запускаем наблюдатель для контейнера
+            $('#trigger').typewrite({
+                'delay': 20 // Установите нужную задержку для эффекта
+            });
+        });
+        </script>
+<!-- <script>
+(function ( $ ) {
+    $.fn.typewrite = function ( options ) {
+        var settings = {
+            'selector': this,
+            'extra_char': '',
+            'delay':    50,
+            'trim':     false,
+            'callback': null
+        };
+        if (options) $.extend(settings, options);
+
+        function type_next_element(index) {
+            var current_element = $(settings.selector[index]);
+            var final_text = current_element.text();
+            if (settings.trim) final_text = $.trim(final_text);
+            current_element.html("").show();
+
+            function type_next_character(element, i) {
+                element.html(final_text.substr(0, i) + settings.extra_char);
+                if (final_text.length >= i) {
+                    setTimeout(function() {
+                        type_next_character(element, i + 2);
+                    }, settings.delay);
+                } else {
+                    if (++index < settings.selector.length) {
+                        setTimeout(function() {
+                            type_next_element(index);
+                        }); // Добавляем задержку между элементами
+                    } else if (settings.callback) settings.callback();
+                }
+            }
+            type_next_character(current_element, 0);
+            // current_element.css('display', 'inline-block');
+        }
+        
+        type_next_element(0);
+
+        return this;
+    };
+})(jQuery);
+
+$(document).ready(function() {
+    $('.demo').typewrite({
+        'delay': 70 // Установите нужную задержку для эффекта
+    });
+});
+</script> -->
+
     <script src="/js/index.bundle.js"></script>
 </body>
 
