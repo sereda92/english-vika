@@ -34,12 +34,19 @@
 
 .s-m_soc
     display: flex
-    gap: 27px   
+    flex-direction: column
+    gap: 30px
+    // gap: 27px   
+
+.s-m_soc_item
+    display: flex
+    gap: 30px
 
 .footer_soc
     display: flex
     flex-direction: column
     gap: 30px
+    margin-left: 104px
 
 .f-1
     display: flex
@@ -49,3 +56,9 @@
         img 
             width: 58px
             height: 89px
+
+.footer_nav
+    // margin-left: clamp(40px, calc(40px + (164 - 40) * ((100vw - 375px) / (1920 - 375))),164px)
+    margin-left: 164px
+    display: flex
+
