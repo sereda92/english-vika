@@ -1430,140 +1430,64 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', adjustTopValue);
         document.addEventListener('DOMContentLoaded', adjustTopValue);
     </script>
-    <!-- <script>
-        gsap.fromTo("#header", 
-            { y: -100 },
-            { y: 0, duration: .2} 
-        );
+        <script>
+            window.addEventListener('load', function() {
+    function initializeAnimations() {
+        // Добавляем начальные анимации
+        gsap.fromTo("#header", { y: -100 }, { y: 0, duration: .2 });
         gsap.fromTo(".main__body__img", 
-            { y: "110%" }, // начальное положение
-            { y: 0, duration: .5, ease: "power2.out", delay: .5 } // конечное положение и продолжительность
-        );        
-        gsap.fromTo(".main__title h1", 
-            { right: "110%" }, // начальное положение
-            { right: "22%", duration: .5, ease: "power2.out", delay: .5, stagger: 0.1 }
-             // конечное положение и продолжительность
-        );
-        gsap.fromTo(".main__title h2", 
-            { right: "-100%" }, // начальное положение
-            { right: "0", duration: .9, ease: "power2.out", delay: .5 } // конечное положение и продолжительность
-        );
-        gsap.fromTo("._arrow", 
-            { transform: "rotate(45deg)",
-                opacity: 0}, // начальное положение
-            { transform: "rotate(0)",
+            { y: "110%", opacity: 0 }, 
+            { y: 0, duration: .5, ease: "power2.out", delay: .5, opacity: 1 });
+        gsap.fromTo(".main__title h1", { right: "110%" }, { right: "22%", duration: .5, ease: "power2.out", delay: .5, stagger: 0.1 });
+        gsap.fromTo(".main__title h2", { right: "-100%" }, { right: "0", duration: .9, ease: "power2.out", delay: .5 });
+        gsap.fromTo("._arrow", { transform: "rotate(45deg)", opacity: 0 }, { transform: "rotate(0)", opacity: 1, duration: .9, ease: "power2.out", delay: .9, stagger: 0.1 });
+        gsap.fromTo(".main__title_info", { x: "-110%" }, { x: "0%", duration: .5, ease: "power2.out", delay: 1, stagger: 0.1 });
+        gsap.fromTo(".subtitle", { 
+            // x: "100%" 
+            opacity: '0'
+        }, { 
+            // x: "0", 
             opacity: 1,
-             duration: .9, ease: "power2.out", delay: .9, stagger: 0.1 } // конечное положение и продолжительность
-        );
-        gsap.fromTo(".main__title_info",
-        {x: "-110%"},
-        {x: "0%",
-        duration: .5, ease: "power2.out", delay: 1, stagger: 0.1
+            duration: 1, 
+            ease: "power2.out", 
+            delay: 1.5, 
+            stagger: 0.1 
+        });
+    }
+
+    function updateResponsiveAnimations() {
+        // Добавляем анимации для маленьких экранов
+        gsap.fromTo(".main__title h1", { right: "110%" }, { right: "35%", duration: .5, ease: "power2.out", delay: .5, stagger: 0.1 });
+        gsap.fromTo(".main__title h2", { right: "-100%" }, { right: "0%", duration: .9, ease: "power2.out", delay: .5, stagger: 0.1 });
+        gsap.fromTo(".subtitle", { 
+            // x: "250%" 
+            opacity: '0'
+        }, { 
+            // x: "5%", 
+            // duration: 1, 
+            // ease: "power1.out", 
+            // delay: 1, 
+            // repeat: 0 
+            opacity: 1,
+            duration: 1, 
+            ease: "power2.out", 
+            delay: 1.5, 
+            stagger: 0.1 
+        });
+    }
+
+    function updateAnimation() {
+        if (window.matchMedia("(max-width: 680px)").matches) {
+            updateResponsiveAnimations();  // Запуск анимаций для маленьких экранов
         }
-        
-        );
-        gsap.fromTo(".subtitle",
-        {x: "100%"},
-        {x: "0",
-        duration: .5, ease: "power2.out", delay: 1, stagger: 0.1
-        }
-        );
-    </script>
-        <script>
-            // Function to handle adding/removing class based on media queries
-            function updateAnimation() {
-                if (window.matchMedia("(max-width: 680px)").matches) {
-                    gsap.fromTo(".main__title h1",
-                        { x: "10%" }, // начальное положение
-                        {
-                            x: "-55%",
-                            duration: .5,
-                            ease: "power2.out",
-                            delay: .5,
-                            stagger: 0.1
-                        }
-                    );
-                    gsap.fromTo(".main__title h2", 
-                        { x: "-100%" }, // начальное положение
-                        { x: "0%", duration: .9, ease: "power2.out", delay: .5, stagger: 0.1 } // конечное положение и продолжительность
-                    );
-                    gsap.fromTo(".subtitle",
-                        {x: "250%"},
-                        {x: "5%",
-                        duration: 1, ease: "power1.out",delay: 1,repeat: 0
-                        }
-                        );
-                }
-            }
-    
-            // Initial check
-            updateAnimation();
-    
-            // Add event listener for resize
-            window.addEventListener('resize', updateAnimation);
-        </script> -->
-        <script>
-            let initialAnimations = [];
-            let responsiveAnimations = [];
-        
-            function initializeAnimations() {
-                // Очищаем старые анимации
-                gsap.killTweensOf("#header");
-                gsap.killTweensOf(".main__body__img");
-                gsap.killTweensOf(".main__title h1");
-                gsap.killTweensOf(".main__title h2");
-                gsap.killTweensOf("._arrow");
-                gsap.killTweensOf(".main__title_info");
-                gsap.killTweensOf(".subtitle");
-        
-                // Добавляем начальные анимации
-                initialAnimations = [
-                    gsap.fromTo("#header", { y: -100 }, { y: 0, duration: .2 }),
-                    gsap.fromTo(".main__body__img", 
-                        { y: "110%",
-                            opacity: 0
-                        }, 
-                        { y: 0, 
-                            duration: .5, 
-                            ease: "power2.out", 
-                            delay: .5,
-                            opacity: 1
-                        }),
-                    gsap.fromTo(".main__title h1", { right: "110%" }, { right: "22%", duration: .5, ease: "power2.out", delay: .5, stagger: 0.1 }),
-                    gsap.fromTo(".main__title h2", { right: "-100%" }, { right: "0", duration: .9, ease: "power2.out", delay: .5 }),
-                    gsap.fromTo("._arrow", { transform: "rotate(45deg)", opacity: 0 }, { transform: "rotate(0)", opacity: 1, duration: .9, ease: "power2.out", delay: .9, stagger: 0.1 }),
-                    gsap.fromTo(".main__title_info", { x: "-110%" }, { x: "0%", duration: .5, ease: "power2.out", delay: 1, stagger: 0.1 }),
-                    gsap.fromTo(".subtitle", { x: "100%" }, { x: "0", duration: .5, ease: "power2.out", delay: 1, stagger: 0.1 })
-                ];
-            }
-        
-            function updateResponsiveAnimations() {
-                // Очищаем старые анимации
-                gsap.killTweensOf(".main__title h1");
-                gsap.killTweensOf(".main__title h2");
-                gsap.killTweensOf(".subtitle");
-        
-                // Добавляем анимации для маленьких экранов
-                responsiveAnimations = [
-                    gsap.fromTo(".main__title h1", { right: "110%" }, { right: "35%", duration: .5, ease: "power2.out", delay: .5, stagger: 0.1 }),
-                    gsap.fromTo(".main__title h2", { right: "-100%" }, { right: "0%", duration: .9, ease: "power2.out", delay: .5, stagger: 0.1 }),
-                    gsap.fromTo(".subtitle", { x: "250%" }, { x: "5%", duration: 1, ease: "power1.out", delay: 1, repeat: 0 })
-                ];
-            }
-        
-            function updateAnimation() {
-                if (window.matchMedia("(max-width: 680px)").matches) {
-                    initializeAnimations();  // Запуск начальных анимаций
-                    updateResponsiveAnimations();  // Запуск анимаций для маленьких экранов
-                } else {
-                    initializeAnimations();  // Запуск начальных анимаций
-                }
-            }
-    
-            updateAnimation();
-    
-            window.addEventListener('resize', updateAnimation);
+        initializeAnimations();  // Запуск начальных анимаций
+    }
+
+    updateAnimation();  // Запуск анимации при загрузке страницы
+});
+
         </script>
+        
 
 
     <script src="/js/index.bundle.js"></script>
