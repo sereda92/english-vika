@@ -11,6 +11,9 @@
                 margin: 90px 0 0 20px
             li:nth-child(5) 
                 margin: 49px 0 0 -50px
+
+    .about_me_link_wrap
+        margin-top: 55px
 @media screen and (max-width: 1400px)
     .special__foto_wrap
         position: relative
@@ -48,6 +51,9 @@
                 bottom: 10%
 
 @media screen and (max-width: 1280px)
+    ._body__item
+        .body_item_text_one
+            width: 80% !important
     .footer_nav
         margin-left: 0
         flex-direction: column
@@ -71,16 +77,15 @@
         width: 100%
     ._item_loft_three
         width: 100%
-    // ._item_loft_five
-    //     width: 274px
     ._item-two
         flex-direction: row-reverse
 
 
 @media screen and (max-width: 1240px)
-    .whats-inside__title img
-        top: 20px
-        left: 30%
+    .whats-inside__title 
+        .inside_arrow_1
+            top: 20px
+            left: 30%
     .english-loft__title
         flex-direction: column
         align-items: center
@@ -110,10 +115,6 @@
             flex-direction: row-reverse
 
 @media screen and (max-width: 1024px)
-    // .beauty-master_info 
-    //     ._info__title
-    //         h3
-    //             margin-left: 105px
     .whats-inside_nav
         gap: 60px
     .inside_list li span
@@ -164,9 +165,13 @@
         transform: rotate(-10deg) scale(1.2)
 
 @media screen and (max-width: 820px)
-    .whats-inside__title img 
-        top: 20px
-        left: 35%
+    ._body__item 
+        .body_item_text_one
+            width: 96% !important
+    .whats-inside__title 
+        .inside_arrow_1
+            top: 20px
+            left: 35%
     .what_about_main 
         .__main_list 
             li:nth-child(1)
@@ -180,13 +185,28 @@
             li:nth-child(5)
                 margin: 30px 0 0 -30px
 @media screen and (max-width: 768px)
+    ._item_loft_four 
+        ._loft_four_button_wrap 
+            img
+                width: 25px
+                height: 25px
+    ._item_loft_four 
+        ._loft_four_link_pos
+            bottom: 20px
+            right: 20px
+    .about_me_text 
+        p:nth-child(1)
+            margin-top: 5px
+        p:nth-child(3)
+            margin-top: 30px
+
     .footer_logo 
         a 
             img
                 width: 41px
                 height: 62px
     .about_me_link_wrap
-        margin-top: 95px
+        margin-top: 29px
     .beauty-master_info 
         ._info__title h3
             margin-bottom: 20px
@@ -232,7 +252,7 @@
                     display: none
                 &:nth-child(2)
                     display: none
-        ._loft_four_button_wrap
+        ._loft_four_link_pos
             bottom: 20px
             right: 20px
             span
@@ -306,7 +326,7 @@
     .what_about_main 
         .__main_list 
             li
-                font-size: 18px
+                font-size: 16px
                 font-weight: 600
             li:nth-child(1)
                 display: block
@@ -347,7 +367,8 @@
     .about_me_title
         margin-bottom: 30px
     ._info_title
-        p
+        p,
+        a
             font-size: 20px
     ._info_title 
         span
@@ -374,19 +395,61 @@
 
 
 @media screen and (max-width: 680px)
+    ._item_loft_four 
+        ._loft_four_link_pos
+            bottom: 20px
+            right: 50%
+            transform: translateX(50%)
+    .beauty-master
+        .special__btn
+            margin-top: 30px
+    .special__btn 
+        a
+            min-height: 40px
+            font-size: 20px
+        .arrow__wrap
+            width: 36px
+            height: 36px
+            img
+                width: 23px
+    .whats-inside_img_mob
+        display: flex
+    .whats-inside_body
+        height: 0px
+        overflow: hidden
+        transition: all .4s ease
+        opacity: 0
+    .inside_visible
+        overflow: visible
+        opacity: 1
+        transition: all .4s ease
+        margin-bottom: 30px
+
+
+    .whats-inside__title 
+        display: flex
+        justify-content: space-between
+    ._info__main_title
+        h3
+            font-size: 24px !important
+    .beauty-master_body
+        margin-top: 30px
+    .beauty-master_info 
+        ._info__main_title
+            margin-top: 30px
     .english-loft__title
-        gap: 13px
+        gap: 10px
     .beauty-master_body
         gap: 0px
-    .whats-inside__title img
+    .inside_arrow_1
         display: none
+    .inside_arrow_2
+        display: block
     .beauty-master_info 
         ._info__title h3
             margin-bottom: 10px
             margin-left: 0
-    ._info__subtitle_text 
-        p
-            width: 79% !important
+
     .wrapper
         padding: 0 0 249px 0
     .footer_list
@@ -444,7 +507,7 @@
         .__main_round 
             width: 107px
             height: 107px
-            border: 3px solid #fff
+            border: 1px solid #fff
             span:nth-child(1),
             span:nth-child(2),
             span:nth-child(3),
@@ -452,7 +515,7 @@
             span:nth-child(5)
                 display: none
         .__main_subround
-            border: 3px solid #fff
+            border: 1px solid #fff
             width: 80px
             height: 80px
         .__round__wrap
@@ -483,16 +546,17 @@
                     border-radius: 50%
                     background-color: $color-FF8A00
             li:nth-child(3)
-                width: 90%
+                width: 85%
             li:nth-child(4)
-                width: 65%
+                width: 75%
             li:nth-child(5)
-                width: 55%
+                width: 60%
     .about_me_img_plan
         position: absolute
         bottom: 0
-        right: 0
-        height: 183px
+        right: -55px
+        height: 203px
+        width: 173px
         img
             width: 100%
             height: 100%
@@ -509,12 +573,10 @@
         h1
             font-size: 78px
             right: 55% 
-            // left: 0
         h2
             font-size: 72px
             top: 7px
             right: 26%
-            // left: 55px
     .main__title_info
         display: none
     .main__title_wrap
@@ -530,6 +592,12 @@
         margin-top: 150px !important
 
 @media screen and (max-width: 540px)
+    ._item_loft_four 
+        ._loft_four_button_wrap 
+            img
+                width: 33px
+                height: 15px
+                margin-top: 7px
     .contact_soc
         gap: 20px
     .contact_info
@@ -539,6 +607,7 @@
         align-items: flex-start
     ._item_loft_four
         ._loft_items
+            margin-top: 0
             li
                 &:nth-child(1)
                     display: block
@@ -552,16 +621,12 @@
                     display: none
                     
         ._loft_four_button_wrap
-            bottom: 20px
-            right: 50%
-            transform: translateX(50%)
             span
                 font-size: 20px
                 margin-right: 18px
             img
                 width: 15px
     ._item_loft_three
-        // justify-content: start
         ._loft_items
             li
                 &:nth-child(3)
@@ -576,19 +641,39 @@
 
 
 @media screen and (max-width: 480px)
+    ._item_loft_four 
+        ._loft_four_button_wrap 
+            span
+                margin-top: 5px
+    ._item_loft_four ._loft_items li:nth-child(1),
+    ._item_loft_four ._loft_items li:nth-child(2),
+    ._loft_four_button_wrap
+        line-height: 15px
+    ._item_loft_four
+        padding: 20px 13px 20px 33px
     .list_faq
         width: 89px
     .about_me_info
         .about_me_main
             align-items: center
+
+    ._item_loft_three
+        align-items: center
+    ._item_loft_two
+        max-width: 137px
+    ._item_loft_five
+        width: 50%
+
+
+    
 @media screen and (max-width: 375px)
+    ._item_loft_four 
+        ._loft_four_link_pos
+            bottom: 15px
     .special__main_list
         gap: 20px
     .subscriptions__main
         margin-top: 30px
-    // .subscriptions__main
-    //     h2
-    //         margin-top: 30px
     .filter__main
         display: none
     .filter-container
@@ -603,24 +688,51 @@
             display: flex
             justify-content: center
 
-// @media (max-width: 768px) 
-// .filter__container 
-//     display: flex
-//     flex-direction: column
+// --------------------
+@media (hover: none) and (pointer: coarse)
 
+    .special__btn a:hover
+        color: #FF8A00
 
-// .filter__buttons 
-//     flex-direction: column
-//     order: 1
+    .nav__link:hover
+        color: #000
+    .about_me_link_wrap 
+        a
+            &:hover
+                text-shadow: none
+                .arrow_hover
+                    opacity: 0
+    .substriction_footer
+        a
+            &:hover
+                color: #000
+    .contact_soc
+        a
+            &:hover
+                color: #000
+                border: 2px solid transparent
+    .footer_soc_item
+        a
+            &:hover
+                text-shadow: none
 
-
-// .filter__btn.__active 
-//     order: -1
-
-
-// .filter__non-active-buttons 
-//     order: 2
-            
-            
-        
-    
+    .footer_list
+        li      
+            a
+                &:hover
+                    color: #000
+    .__item_btn_wrap
+        .__item_btn
+            &:hover
+                box-shadow: none
+    ._item_loft_four
+        ._loft_four_button_wrap
+            &:hover
+                text-shadow: none
+                .arrow_loft_hover
+                    opacity: 0
+    .special__btn a:hover 
+        .arrow__wrap
+            animation: none
+    .special__btn a:hover::after 
+        right: 100%

@@ -23,6 +23,19 @@ footer, header, nav, section, main
 button
     background-color: initial
     border: none
+        /* inherit font & color from ancestor */
+    color: inherit
+    font: inherit
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit
+    -moz-osx-font-smoothing: inherit
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none
 
 
 ol, ul

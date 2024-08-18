@@ -7,7 +7,6 @@
     transition: all .5s ease
     transform: translateY(-100px)
 .header_burger_active
-    // transition: all .5s ease
     position: relative
     z-index: 50
     background-color: $color-CFE5FF
@@ -22,7 +21,6 @@
     align-items: center
 
 .logo__link
-    // position: absolute
     transition: all .5s ease
 .nav__list
     display: flex
@@ -32,7 +30,9 @@
     gap: 40px
 
 .nav__link
-    // font-size: 28px
     font-weight: 600
     font-size: clamp(22px, calc(22px + (28 - 22) * ((100vw - 768px) / (1920 - 768))), 28px)
     color: $color-black
+    transition: color .4s ease
+    &:hover
+        color: #FF8A00

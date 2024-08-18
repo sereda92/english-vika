@@ -18,6 +18,9 @@
             font-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 375px) / (1920 - 375))),28px)
             color: #000
             white-space: nowrap
+            transition: all .4s ease
+            &:hover
+                color: #FF8A00
 
 .footer_soc_item
     display: flex
@@ -26,17 +29,22 @@
     p
         font-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 375px) / (1920 - 375))),28px)
         white-space: nowrap
+        transition: all .4s ease
+        color: #000
     a
         font-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 375px) / (1920 - 375))),28px)
         color: $color-FF8A00
         white-space: nowrap
         font-family: "Lacquer", system-ui
+        transition: all .4s ease
+        &:hover
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, .25)
+
 
 .s-m_soc
     display: flex
     flex-direction: column
     gap: 30px
-    // gap: 27px   
 
 .s-m_soc_item
     display: flex
@@ -58,7 +66,6 @@
             height: 89px
 
 .footer_nav
-    // margin-left: clamp(40px, calc(40px + (164 - 40) * ((100vw - 375px) / (1920 - 375))),164px)
     margin-left: 164px
     display: flex
 
